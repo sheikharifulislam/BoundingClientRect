@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    padding-left: 100px;
+} */
+
+div#example {
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    margin: 50px auto;
+    background: purple;
+}
+
+body {
+    padding-bottom: 1000px;
+}
+p {
+    margin: 0;
+}
