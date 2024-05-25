@@ -38,26 +38,16 @@ const FrameBody = () => {
                     </p>
                 ))}
             </div> */}
-            <div
+            <img
+                src="https://cdn.pixabay.com/photo/2024/05/14/05/38/gorilla-8760357_640.jpg"
                 style={{
-                    gridTemplateColumns: "repeat(18, 100px)",
-                    gridTemplateRows: "repeat(6, 100px)",
-                    display: "grid",
-                    height: "600px",
+                    marginLeft: "200px",
+                    paddingRight: "200px",
+                    width: "200px",
+                    height: "200px",
                 }}
-            >
-                <img
-                    src="https://cdn.pixabay.com/photo/2024/05/14/05/38/gorilla-8760357_640.jpg"
-                    style={{
-                        gridRowStart: 3,
-                        gridColumnStart: 9,
-                        gridColumnEnd: 15,
-                        width: "250px",
-                        height: "250px",
-                    }}
-                    ref={exampleRef}
-                />
-            </div>
+                ref={exampleRef}
+            />
         </Fragment>
     );
 };
