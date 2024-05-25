@@ -1,54 +1,46 @@
-import { useEffect, useRef, useState } from "react";
+import FrameComponent from "react-frame-component";
+import FrameBody from "./component/FrameBody";
 
 const css = `
+    // body {
+    //   margin: 0;
+    //   padding: 0;
+    //   margin-left: 100px;
+    //   margin-top: 700px;
+    // }
+    div#example {
+        width: 400px;
+        height: 200px;
+        padding: 20px;
+        margin: 50px auto;
+        background: purple;
+    }
+    html {
+        margin-top: 100px;
+    }
     body {
-      margin: 0;
-      padding: 0;
-      margin-left: 100px;
-      margin-top: 700px;
+        // padding-bottom: 1000px;
+        // padding-top: 150px;
+        margin: 0;
+        // margin-left: 100px;
+        // margin-top: 200px;
+        // border: 1px solid green;
+    }
+    p {
+        margin: 0;
     }
 
 `;
 
 function App() {
-    const exampleRef = useRef(null);
-    const [boundingClientRect, setBoundingClientRect] = useState({});
-    useEffect(() => {
-        function getBoundingClientRect() {
-            const { top, right, bottom, left, width, height, x, y } = exampleRef.current.getBoundingClientRect();
-            setBoundingClientRect({
-                top: top + window.scrollY,
-                right,
-                bottom: bottom + scrollY,
-                left,
-                width,
-                height,
-                x,
-                y: top + window.scrollY,
-            });
-        }
-        getBoundingClientRect();
-        window.addEventListener("scroll", getBoundingClientRect);
-        return () => window.removeEventListener("scroll", getBoundingClientRect);
-    }, []);
-
-    useEffect(() => {
-        console.log(boundingClientRect);
-    }, [boundingClientRect]);
-
     return (
         <div>
-            {/* <h1
-                style={{
-                    padding: "100px 0",
-                }}
-            >
-                This is h1
-            </h1>
             <FrameComponent
                 style={{
                     width: "100vw",
                     height: "100vh",
+                    marginTop: "100px",
+                    border: "1px solid red",
                 }}
                 head={
                     <>
@@ -57,15 +49,7 @@ function App() {
                 }
             >
                 <FrameBody />
-            </FrameComponent> */}
-            <div ref={exampleRef} id="example"></div>
-            <div>
-                {Object.keys(boundingClientRect).map((property) => (
-                    <p key={property}>
-                        {property}: {boundingClientRect[property]}{" "}
-                    </p>
-                ))}
-            </div>
+            </FrameComponent>
         </div>
     );
 }
